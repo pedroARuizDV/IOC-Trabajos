@@ -1,0 +1,6 @@
+nom1;cognom11 cognom12;H;Espanyola;historial1;
+nom2;cognom21 cognom22;M;Francesa;historial2;
+nom3;cognom31 cognom32;M;Espanyola;historial3;
+nom4;cognom41 cognom42;M;Portuguesa;historial4;
+Antornio;Bosch;H;Español;Nada;
+Maria;Rodrini Panini;M;Italiana;Alergia al pan;
