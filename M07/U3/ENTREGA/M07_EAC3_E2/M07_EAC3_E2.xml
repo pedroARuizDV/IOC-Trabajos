@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                      "http://docbook.org/xml/4.5/docbookx.dtd">
+<book lang="ES">
+    <bookinfo>
+        <title>Manual clinica IOC</title>
+        <author>            
+            <firstname><emphasis>Pedro A.</emphasis></firstname>
+            <surname><emphasis>Ruiz</emphasis></surname>
+        </author>        
+    </bookinfo>
+    
+    <!-- Primer capítulo - GUI utilizadas -->
+    <chapter>      
+        <title>Elementos GUI utilizados</title>        
+        <para>
+            <itemizedlist>
+                <title>Lista de elementos</title>
+                
+                <listitem>                    
+                    <para><emphasis role="bold"> Label</emphasis> → <xref linkend="label"/></para>
+                </listitem>
+                <listitem>
+                    <para> <emphasis role="bold"> TextBox</emphasis> → <xref linkend="textbox"/></para>
+                </listitem>
+                <listitem>
+                    <para> <emphasis role="bold"> RichTextBox</emphasis> → <xref linkend="richtextbox"/></para>
+                </listitem>
+                <listitem>
+                    <para> <emphasis role="bold"> RadioButton</emphasis> → <xref linkend="radiobutton"/></para>
+                </listitem>
+                <listitem>
+                    <para> <emphasis role="bold"> TabControl</emphasis> → <xref linkend="tabcontrol"/></para>
+                </listitem>
+                <listitem>
+                    <para> <emphasis role="bold"> Button</emphasis> → <xref linkend="button"/></para>
+                </listitem>                
+                <listitem>
+                    <para> <emphasis role="bold"> ComboBox</emphasis> → <xref linkend="combobox"/></para>
+                </listitem>
+                <listitem>                    
+                    <para> <emphasis role="bold"> ToolStrip</emphasis> → <xref linkend="toolstrip"/></para>
+                </listitem>
+                <listitem>                    
+                    <para> <emphasis role="bold"> ListView</emphasis> → <xref linkend="listview"/></para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </chapter>
+    
+    <!-- Segundo capítulo - Detalle GUI -->
+    <chapter>
+        <title>Descripción GUI utilizados</title>          
+        <para>
+            Aquest capítol mostra les característiques de cada element utilitzat a l'alicació
+        </para>
+       <note>
+            <para>
+                Este capítulo muestra las características de cada elemento utilizado en la aplicación.
+            </para>                
+        </note>
+        
+        <informaltable pgwide="1">                
+            <tgroup cols="5" align="left" colsep="1" rowsep="1">
+                <!-- Para la transformación en HTML, para un correcto visionado, hay que quitar las 4 primeras etiquetas "colspec" -->
+                <colspec colnum="1"/>
+                <colspec colnum="2"/>
+                <colspec colnum="3" colwidth="100"/>
+                <colspec colnum="4" colwidth="150"/>
+                <colspec colnum="5" align="center"/>
+                <thead>
+                    <!-- Cabecera tabla -->
+                    <row>
+                        <entry align="center">Elemento</entry>
+                        <entry align="center">Tipo</entry>
+                        <entry align="center">Descripción</entry>
+                        <entry align="center">Propiedades principales</entry>
+                        <entry align="center">Captura</entry>
+                    </row>                            
+                    </thead>
+                <tbody>
+                    <!-- Label -->
+                    <row>
+                        <entry id="label" xreflabel="info" valign="middle" align="center"><para>Label</para></entry>
+                        <entry valign="middle" align="center"><para>Control visual</para></entry>                                
+                        <entry>
+                            <para>                                
+                                Proporciona información en tiempo de ejecución o texto descriptivo para un control.
+                            </para>
+                        </entry>
+                        <entry>                                    
+                            <itemizedlist>                                            
+                                <listitem>
+                                    <para>
+                                        <emphasis role="bold">Text:</emphasis> Texto asociado al control    
+                                    </para>
+                                </listitem>
+                            </itemizedlist> 
+                            <itemizedlist>                                            
+                                <listitem>
+                                    <para>
+                                        <emphasis role="bold">Font:</emphasis> Permite cambiar el tamaño, tipo de letra, color, etc... de la fuente.    
+                                    </para>
+                                </listitem>
+                            </itemizedlist>   
+                        </entry>
+                        <entry valign="middle">
+                            <para>    
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/label.png" scale="30"/> 
+                                    </imageobject>
+                                </mediaobject>
+                                </para>   
+                        </entry>                                
+                    </row>
+                    
+                    <!-- TextBox -->
+                    <row>
+                        <entry id="textbox" xreflabel="info" valign="middle" align="center"><para>TextBox</para></entry>
+                        <entry valign="middle" align="center"><para>Control visual</para></entry>
+                        <entry>
+                            <para>
+                                Campo de texto que nos permite introducir datos para posteriormente
+                                tratarlos.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Multiline:</emphasis> Controla si el texto en el control de edición puede abarcar más de una lista    
+                                        </para>
+                                    </listitem>
+                                </itemizedlist> 
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Font:</emphasis> Permite cambiar el tamaño, tipo de letra, color, etc... de la fuente.    
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>   
+                            </para>
+                        </entry>
+                        <entry valign="middle">
+                            <para>                                     
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/textbox.png" scale="30"/> 
+                                    </imageobject>
+                                </mediaobject>
+                            </para>
+                        </entry>                                
+                    </row>                            
+                    
+                    <!-- RichTextBox -->
+                    <row>
+                        <entry id="richtextbox" xreflabel="info" valign="middle" align="center"><para>Rich TextBox</para></entry>
+                        <entry valign="middle" align="center"><para>Control visual</para></entry>
+                        <entry>
+                            <para>
+                                Proporciona una entrada de texto y características de edición avanzadas,
+                                como el formato de parráfo y de caracteres.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">MaxLength:</emphasis> Especifica el número máximo de caracteres que
+                                            se pueden introducir en el control de edición.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist> 
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Font:</emphasis> Permite cambiar el tamaño, tipo de letra, color, etc... de la fuente.     
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>   
+                            </para>
+                        </entry>
+                        <entry valign="middle">
+                            <para>                                     
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/richtextbox.png"  scale="20"/> 
+                                    </imageobject>
+                                </mediaobject>
+                            </para>
+                        </entry>                                
+                    </row>
+                    
+                    <!-- RadioButton -->
+                    <row>
+                        <entry id="radiobutton" xreflabel="info" valign="middle" align="center"><para>Radio Button</para></entry>
+                        <entry valign="middle" align="center"><para>Control visual</para></entry>
+                        <entry>
+                            <para>
+                                Permite al usuario seleccionar una única opción de entre un grupo de opciones
+                                cuando están emparejadas con otros RadioButtons.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Checked:</emphasis> Indica si el botón de radio está activado o no.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist> 
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Text:</emphasis> Texto asociado al control  
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>   
+                            </para>
+                        </entry>
+                        <entry valign="middle">
+                            <para>                                     
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/radiobutton.png" scale="25" /> 
+                                    </imageobject>
+                                </mediaobject>
+                            </para>
+                        </entry>                                
+                    </row>
+                    
+                    <!-- TabControl -->
+                    <row>
+                        <entry id="tabcontrol" xreflabel="info" valign="middle" align="center"><para>TabControl</para></entry>
+                        <entry valign="middle" align="center"><para>Contenedor</para></entry>
+                        <entry>
+                            <para>
+                                Controla y muestra al usuario una colección relacionada de pestañas que pueden
+                                contener controles y componentes.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">TabPages:</emphasis> Opción que permite agregar o quitar pestañas.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist> 
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Alignment:</emphasis> Determina si las pestañas aparecen en la parte
+                                            superior, inferior, izquierda o derecha del control.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>   
+                            </para>
+                        </entry>
+                        <entry valign="middle">
+                            <para>                                     
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/tabcontrol.png"  scale="20"/> 
+                                    </imageobject>
+                                </mediaobject>
+                            </para>
+                        </entry>                                
+                    </row>
+                    
+                    <row>
+                        <entry id="button" xreflabel="info" valign="middle" align="center"><para>Button</para></entry>
+                        <entry valign="middle" align="center"><para>Control visual</para></entry>
+                        <entry>
+                            <para>
+                                Genera un evento cuando un usuario hace clic en él.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Text:</emphasis> Texto asociado al control  
+                                        </para>
+                                    </listitem>
+                                </itemizedlist> 
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Enabled:</emphasis> Indica si el control está habilitado. Se puede 
+                                            <emphasis>habilitar/deshabilitar</emphasis> en función de un evento.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>   
+                            </para>
+                        </entry>
+                        <entry valign="middle">
+                            <para>                                     
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/button.png"  scale="30"/> 
+                                    </imageobject>
+                                </mediaobject>
+                            </para>
+                        </entry>                                
+                    </row>
+                    
+                    <!-- ComboBox -->
+                    <row>
+                        <entry id="combobox" xreflabel="info" valign="middle" align="center"><para>ComboBox</para></entry>
+                        <entry valign="middle" align="center"><para>Control visual</para></entry>
+                        <entry>
+                            <para>
+                                Muestra un cuadro de texto editable con una lista desplegable de los valores
+                                permitidos.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Items:</emphasis> Elementos en el cuadro combinado.  
+                                        </para>
+                                    </listitem>
+                                </itemizedlist> 
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">MaxDropDownItems:</emphasis> Número máximo de entradas 
+                                            en la lista desplegable.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>   
+                            </para>
+                        </entry>
+                        <entry valign="middle">
+                            <para>                                     
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/combobox.png"  scale="30"/> 
+                                    </imageobject>
+                                </mediaobject>
+                            </para>
+                        </entry>                                
+                    </row>
+                    
+                    <!-- ToolStrip -->
+                    <row>
+                        <entry id="toolstrip" xreflabel="info" valign="middle" align="center"><para>ToolStrip</para></entry>
+                        <entry valign="middle" align="center"><para>Contenedor</para></entry>
+                        <entry>
+                            <para>
+                                Proporciona barras de herramientas y otros elementos de la interfaz de usuario
+                                que admiten varias opciones de apariencia.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Items:</emphasis> Colección de elementos que se van a 
+                                            mostrar en <emphasis>ToolStrip</emphasis>.  
+                                        </para>
+                                    </listitem>
+                                </itemizedlist> 
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">LayoutStyle:</emphasis> Especifica la orientación de diseño de ToolStrip.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>   
+                            </para>
+                        </entry>
+                        <entry valign="middle">
+                            <para>                                     
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/toolstrip.png"  scale="25"/> 
+                                    </imageobject>
+                                </mediaobject>
+                            </para>
+                        </entry>                                
+                    </row>
+                    
+                    <!-- ListView -->
+                    <row>
+                        <entry id="listview" xreflabel="info" valign="middle" align="center"><para>ListView</para></entry>
+                        <entry valign="middle" align="center"><para>Contenedor</para></entry>
+                        <entry>
+                            <para>
+                                Muestra una colección de elementos en una de cinco vistas diferentes.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">Columns:</emphasis> Columnas mostradas en la vista de detalles.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist> 
+                                <itemizedlist>                                            
+                                    <listitem>
+                                        <para>
+                                            <emphasis role="bold">LabelEdit:</emphasis> Permite que el usuario modifique las 
+                                            etiquetas de los elementos directamente.
+                                        </para>
+                                    </listitem>
+                                </itemizedlist>   
+                            </para>
+                        </entry>
+                        <entry valign="middle">
+                            <para>                                     
+                                <mediaobject>
+                                    <imageobject>
+                                        <!-- Para la transformación en HTML, para un correcto visionado, el valor de "scale" ha de ser 15 -->
+                                        <imagedata fileref="imagenes/listview.png"  scale="12"/> 
+                                    </imageobject>
+                                </mediaobject>
+                            </para>
+                        </entry>                                
+                    </row>
+                    
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </chapter>
+    
+    <!-- Tercer capítulo (Formularios) -->
+    <chapter>
+        <title>Formularios </title>          
+        <note>
+            <para>
+                Este capítulo explica los diferentes formularios de la aplicación y su uso. 
+            </para>
+        </note>
+        
+        <!-- Primer Formulario -->
+        <sect1>
+            <title>Form1</title>
+            <para>
+                Este <application>Form</application>, valida un 
+                <emphasis>usuario</emphasis> y <emphasis>contraseña</emphasis> 
+                para poder iniciar la aplicación. Una vez introducidos ambos campos,
+                puedes acceder a la aplicación.
+            </para>
+            <para>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="imagenes/form1.png" scale="75"/>
+                    </imageobject>
+                </mediaobject>                                
+            </para>            
+        </sect1>
+
+        <!-- Segundo Formulario -->
+        <sect1>
+            <title>Form2</title> 
+            <para>
+                Este <application>Form</application>, es un formulario de entrada
+                de datos. Los campos son:
+            </para>            
+            <orderedlist>
+                <listitem>
+                    <para><emphasis role="bold">Nom:</emphasis> Campo tipo TextBox donde introducimos el Nombre del paciente</para>                        
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Cognom:</emphasis> Campo tipo TextBox donde introducimos el apellido del paciente</para>                        
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Sexe:</emphasis> Campo de tipo radioButton donde podemos seleccionar entre H (Hombre) y M (Mujer)</para>                        
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Nacionalitat:</emphasis> Campo tipo TextBox donde 
+                    introducimos la nacionalidad del paciente</para>
+                </listitem>
+            </orderedlist>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="imagenes/form2.png" scale="70"/>
+                </imageobject>
+            </mediaobject>            
+        </sect1>
+        
+        <!-- Tercer Formulario -->
+        <sect1>            
+            <title>Form3</title>
+            <para>
+                Este <application>Form</application>,es un formulario que muestra el listado 
+                de todos los pacientes dados de alta.
+            </para>           
+            <note>
+                <para>El formulario tiene las siguientes opciones de filatrado:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Filtrar por hombre (<emphasis role="bold">H</emphasis>)</para>
+                    </listitem>
+                    <listitem>
+                        <para>Filtrar por Mujer (<emphasis role="bold">M</emphasis>)</para>
+                    </listitem>
+                    <listitem>
+                        <para>Mostrar todos los registros(<emphasis role="bold">Tots</emphasis>). <emphasis> Opción por defecto</emphasis></para>
+                    </listitem>
+                </orderedlist>
+            </note>            
+            <para>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="imagenes/form3.png" scale="50"/>
+                    </imageobject>
+                </mediaobject>
+            </para>
+        </sect1>
+        
+        <!-- Cuarto Formulario -->
+        <sect1>
+            <title>Form4</title>  
+            <para>
+                Este <application>Form</application>,es un formulario que muestra el listado 
+                de todos los pacientes. Si hacemos clic en el botón que representa a un paciente,
+                obtenemos la información de su historial.
+            </para>            
+                <para>
+                    Detalle de opciones:
+                    <orderedlist>
+                        <listitem>
+                            <para>Ver Historial de cada paciente</para>
+                        </listitem>
+                        <listitem>
+                            <para>
+                                Ir al formulario 3 para visualizar el listado completo en formato 
+                                tabla (Botón <emphasis>Resum Pacients</emphasis>
+                            </para>
+                        </listitem>
+                    </orderedlist>
+                </para>
+            
+            <para>
+                <mediaobject>
+                     <imageobject>
+                         <imagedata fileref="imagenes/form4.png" scale="50"/>
+                     </imageobject>
+                 </mediaobject>
+            </para>
+        </sect1>                            
+           
+    </chapter>
+    
+</book>
