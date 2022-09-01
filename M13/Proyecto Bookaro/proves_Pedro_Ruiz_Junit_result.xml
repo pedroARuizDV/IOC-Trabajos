@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookaroTest" project="BookaroBackend" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.bookaro.api.BookaroTest" time="2.01" displayname="BookaroTest" uniqueid="[engine:junit-jupiter]/[class:com.bookaro.api.BookaroTest]">
+    <testcase name="test1" classname="com.bookaro.api.BookaroTest" time="1.388" displayname="test1()" uniqueid="[engine:junit-jupiter]/[class:com.bookaro.api.BookaroTest]/[method:test1()]"/>
+    <testcase name="test2" classname="com.bookaro.api.BookaroTest" time="0.469" displayname="test2()" uniqueid="[engine:junit-jupiter]/[class:com.bookaro.api.BookaroTest]/[method:test2()]"/>
+    <testcase name="test3" classname="com.bookaro.api.BookaroTest" time="0.041" displayname="test3()" uniqueid="[engine:junit-jupiter]/[class:com.bookaro.api.BookaroTest]/[method:test3()]"/>
+    <testcase name="test4" classname="com.bookaro.api.BookaroTest" time="0.105" displayname="test4()" uniqueid="[engine:junit-jupiter]/[class:com.bookaro.api.BookaroTest]/[method:test4()]"/>
+  </testsuite>
+</testrun>

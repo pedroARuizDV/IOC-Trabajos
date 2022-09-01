@@ -1,0 +1,6556 @@
+{
+	"info": {
+		"_postman_id": "897a511c-52b9-4254-8dc9-0838247176c7",
+		"name": "TEA4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login (with ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe Bearer\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"admin\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTA5NzE5NTl9.uxl86i0XnLESFbFHNIOmvVe4XzfB-SVSc36YRwJevXl_td9z19a2CsaF8v1goXvFhu_VFPi2l_TFnw7NLyo71A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				},
+				"description": "Login con un usuario con ROL_ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "login (with MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe username\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"pedro\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTA5NzE5NTl9.uxl86i0XnLESFbFHNIOmvVe4XzfB-SVSc36YRwJevXl_td9z19a2CsaF8v1goXvFhu_VFPi2l_TFnw7NLyo71A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"username\": \"pedro\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				},
+				"description": "Login con un usuario con ROL_MOD"
+			},
+			"response": []
+		},
+		{
+			"name": "login (with USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe username\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"cliente1\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTA5NzE5NTl9.uxl86i0XnLESFbFHNIOmvVe4XzfB-SVSc36YRwJevXl_td9z19a2CsaF8v1goXvFhu_VFPi2l_TFnw7NLyo71A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"username\": \"cliente1\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				},
+				"description": "Login con un usuario con ROL_USER"
+			},
+			"response": []
+		},
+		{
+			"name": "allUsers (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"client1\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"all"
+					]
+				},
+				"description": "Búsqueda de todos los usuarios mediante un usuario con ROL_ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "allUsers (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"client1\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"all"
+					]
+				},
+				"description": "Búsqueda de usuarios con ROL_MOD"
+			},
+			"response": []
+		},
+		{
+			"name": "allUserFail (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"all"
+					]
+				},
+				"description": "Búsqueda de todos los usuarios con ROL_USER. Tiene que devolvernos Forbidden (403)"
+			},
+			"response": []
+		},
+		{
+			"name": "insertUser(with ROL_ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe json\", function() {\r",
+							"    var jsonData = pm.response.json();    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json USER\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.role).to.eq(\"ROLE_ADMIN\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"username\": \"userprueba4\",\r\n    \"password\": \"1234\",\r\n    \"email\":\"userprueba4@bookaro.es\",\r\n    \"role\":\"ROLE_ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/insertA",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"insertA"
+					]
+				},
+				"description": "Insercción de usuario mediante un ROL_ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "insertUser(with ROL_MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe json\", function() {\r",
+							"    var jsonData = pm.response.json();    \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"username\": \"userprueba5\",\r\n    \"password\": \"1234\",\r\n    \"email\":\"userprueba5@bookaro.es\",\r\n    \"role\":\"ROLE_ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"insert"
+					]
+				},
+				"description": "Insercción de un usuario mediante ROL_MOD"
+			},
+			"response": []
+		},
+		{
+			"name": "insertUser(with ROL_USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"username\": \"userprueba6\",\r\n    \"password\": \"1234\",\r\n    \"email\":\"userprueba6@bookaro.es\",\r\n    \"role\":\"ROLE_ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"insert"
+					]
+				},
+				"description": "Intento de insercción de un User con ROL_USER. Debe retornar Forbidden."
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser(with ROL_ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Obtener json USER email actualizado\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.email).to.eq(\"adminActualizado@bookaro.com\"); \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\",\r\n    \"email\": \"adminActualizado@bookaro.com\",\r\n    \"dni\": \"43111222C\",\r\n    \"name\": \"pedro\",\r\n    \"surname\": \"ruiz\",\r\n    \"address\": \"Dirección actualizada\",\r\n    \"age\": 40,\r\n    \"id\": 2,\r\n    \"role\": \"ROLE_ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"update"
+					]
+				},
+				"description": "Actualización email del usuario \"admin\". Debe devolver STATUS OK 200 y un Json con el email actualizado"
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser(with ROL_MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"username\": \"cliente1\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"cliente1Actualizado@bookaro.com\",\r\n    \"dni\": \"43111222C\",\r\n    \"name\": \"nombreCliente1\",\r\n    \"surname\": \"apellidoCliente1\",\r\n    \"address\": \"Dirección actualizada\",\r\n    \"age\": 40,\r\n    \"id\": 2,\r\n    \"role\": \"ROLE_USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"update"
+					]
+				},
+				"description": "Intemto de actualización de un cliente mediante el endPoint /api/user/update. Debe dar error 500 debido a que para actualizar sus datos hay que hacerlo con el endPoint /api/client/update"
+			},
+			"response": []
+		},
+		{
+			"name": "findClientByUsername (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/username/cliente1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"username",
+						"cliente1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findClientByUsername (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/username/cliente1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"username",
+						"cliente1"
+					]
+				},
+				"description": "Búsqueda de un cliente por username. Esta búsqueda la hace el propio cliente de la cuenta."
+			},
+			"response": []
+		},
+		{
+			"name": "findClientByUsername FAIL (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/username/cliente2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"username",
+						"cliente2"
+					]
+				},
+				"description": "Intentamos hacer una búsqueda por username del cliente1 con la autorización del cliente2. Debe devolver 403 Forbidden."
+			},
+			"response": []
+		},
+		{
+			"name": "findOrderByClient (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/orders/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"orders",
+						"4"
+					]
+				},
+				"description": "Obtención de una lista de orders de un cliente. Puede realizar esta búsqueda ROL_ADMIN, ROL_MOD y el usuarios de la cuenta"
+			},
+			"response": []
+		},
+		{
+			"name": "findOrderByClient Fail (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/orders/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"orders",
+						"5"
+					]
+				},
+				"description": "Intento de búsqueda de las ordenes de un cliente que no es el propio. Debe retornar Forbidden"
+			},
+			"response": []
+		},
+		{
+			"name": "findClientBySubscription (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_sub\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/subscription",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"subscription"
+					]
+				},
+				"description": "Devuelve una lista de clientes filtrando por su subscripción."
+			},
+			"response": []
+		},
+		{
+			"name": "findClientById (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"4"
+					]
+				},
+				"description": "Búsqueda de un cliente por ID. Puede realizar esta búsqueda el ADMIN, MOD y el propio usuario de la cuenta."
+			},
+			"response": []
+		},
+		{
+			"name": "findOrderClientByActive (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "active",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/ordersStatus/cliente1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"ordersStatus",
+						"cliente1"
+					]
+				},
+				"description": "Búsqueda del listado de ordenes de un cliente. En el endpoint se introduce el nombre de usuario y en el body el parámetro de tipo active de la order. Puede ser true/false. Puede acceder ADMIN, MOD y el propio usuario que generó la order."
+			},
+			"response": []
+		},
+		{
+			"name": "findClientById (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"4"
+					]
+				},
+				"description": "Búsqueda de un cliente por Id. Si es el propio usuario (es el caso) retorna Status 200 OK, en caso contrario retornara Status 403 Forbidden"
+			},
+			"response": []
+		},
+		{
+			"name": "findClientById Fail (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"5"
+					]
+				},
+				"description": "Intento de búsqueda de un usuario por su id siento el usuario de la búsqueda diferente al del id."
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser (with ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/delete/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"delete",
+						"4"
+					]
+				},
+				"description": "Borrado de un usuario por su id. ROL_ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser Fail(with ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/delete/150",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"delete",
+						"150"
+					]
+				},
+				"description": "Intento de borrado de un usuario con un ID que no existe. Debe retornar un Status: 200 OK y el mensaje en el body \"Delete User\""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUserFail (with MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/delete/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"delete",
+						"1"
+					]
+				},
+				"description": "Intento de borrado de un usuario con ROLE_MOD. Tiene que devolver 403 Forbidden ya que sólo el ROLE_ADMIN tiene permisos de eliminación."
+			},
+			"response": []
+		},
+		{
+			"name": "userCancelation (with ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Usuario dado de baja\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":5,\r\n    \"username\":\"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/baja/user",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"baja",
+						"user"
+					]
+				},
+				"description": "Baja (no borrado) de un usuario (cliente) con el ROL_ADMIN. Básicamente cambia el rol a null para que no pueda acceder y el cliente pasa a estar a NO ACTIVO"
+			},
+			"response": []
+		},
+		{
+			"name": "userCancelation FAIL(with ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"No se ha podido dar de baja el usuario: userNoExiste\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":150\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/baja/userNoExiste",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"baja",
+						"userNoExiste"
+					]
+				},
+				"description": "Intento de dar de baja el usuario con un ID que no existe."
+			},
+			"response": []
+		},
+		{
+			"name": "userCancelation FAIL(with MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":3,\r\n    \"username\":\"cliente1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/baja/cliente1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"baja",
+						"cliente1"
+					]
+				},
+				"description": "Intento de borrado de cancelación de una cuenta de usuario con el ROLD_MOD. Devolverá un 403 Forbidden ya que este usuario tiene ordenes activas."
+			},
+			"response": []
+		},
+		{
+			"name": "userCancelation (with USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMiIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MTA2OX0.Nb4T9kwAD8Ly7-CHxL0Fw6ZhTSUcFDyhb5cgSFtjvJw7sAUDjAEWOd6eDeL4lM1qFHmb1IiSEL1-vB0QmOO1uQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"username\":\"cliente1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/baja/cliente2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"baja",
+						"cliente2"
+					]
+				},
+				"description": "El usuario de la cuenta da de baja su usuario."
+			},
+			"response": []
+		},
+		{
+			"name": "userCancelation Fail (with USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":3,\r\n    \"username\":\"cliente1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/baja/cliente2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"baja",
+						"cliente2"
+					]
+				},
+				"description": "Intentamos dar de baja un cliente con un ROL_USER, pero que no es el propietario de la cuenta."
+			},
+			"response": []
+		},
+		{
+			"name": "allClients (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"client1\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"all"
+					]
+				},
+				"description": "StartFragment\n\nObtenderemos una lista de objetos de tipo Cliente. Se realiza con el ROL_ADMIN\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "allClients (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"client1\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"all"
+					]
+				},
+				"description": "Obtenderemos una lista de objetos de tipo Cliente. Se realiza con el ROL_MOD"
+			},
+			"response": []
+		},
+		{
+			"name": "allClients (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"all"
+					]
+				},
+				"description": "Intento de búsqueda de todos los clientes. Tiene que devolvver Forbidden ya que el ROL_USER no tiene permisos."
+			},
+			"response": []
+		},
+		{
+			"name": "findClientPaginated (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"author5\",\r\n    \"nacionality\": \"MOROCO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/pagination/1/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"pagination",
+						"1",
+						"1"
+					]
+				},
+				"description": "Búsqueda de clientes por paginación"
+			},
+			"response": []
+		},
+		{
+			"name": "insertClient(without ROL)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Added a client\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {        \r\n    \"username\": \"cliente4\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"cliente4@bookaro.com\",\r\n    \"dni\": \"43111333Z\",\r\n    \"name\": \"name4\",\r\n    \"surname\": \"surname4\",\r\n    \"address\": \"C/ dirección de prueba4\",\r\n    \"age\": 40,\r\n    \"active\": true\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"insert"
+					]
+				},
+				"description": "Insercción de un cliente sin autorización. Esto debe ser así que que cualquiera tiene que poder crear un cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "updateClient(ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Updated Client.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"id\":4,\r\n    \"username\": \"cliente1\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"clienteActualizado1@bookaro.com\",\r\n    \"dni\": \"43111333L\",\r\n    \"name\": \"name1\",\r\n    \"surname\": \"surname1\",\r\n    \"address\": \"C/ dirección de prueba1\",\r\n    \"age\": 40,\r\n    \"active\": true,\r\n    \"subscription\": {\r\n        \"id_sub\": 1        \r\n    }\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateClient(USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Updated Client.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlNCIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5NDEzNn0.18-DdEVmsgLZ-9DROjvxV7wcISnu8EIfNHcJvKT5son0I10qzBtZSPBSCl0pw6NYYkIj6gzkp2NgTMQXMDDBew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"id\":9,\r\n    \"username\": \"cliente4\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"cliente4@bookaro.com\",\r\n    \"dni\": \"43111333Z\",\r\n    \"name\": \"name4\",\r\n    \"surname\": \"surname4\",\r\n    \"address\": \"C/ dirección de prueba4\",\r\n    \"age\": 40,\r\n    \"active\": true\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"update"
+					]
+				},
+				"description": "Actualización de los datos de un cliente. El rol es de tipo USER. Si esta actualización se hace sobre la propia información del cliente retornará 200 ok."
+			},
+			"response": []
+		},
+		{
+			"name": "updateClient Fail(USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MjU2Njg3OX0.IOij6jnJotl2Cx4dWSUl6bFe3ur7tFNO__QmUeoOAorw3lY1L-y8n5dz6ZcKcU5H62rQ-2qgpk7AWsxQ4sy7lg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n    \"id\":8,\r\n    \"username\": \"cliente4\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"cliente4ActualizadoPorCliente1@bookaro.com\",\r\n    \"dni\": \"43111333Z\",\r\n    \"name\": \"name4\",\r\n    \"surname\": \"surname4\",\r\n    \"address\": \"C/ dirección de prueba4\",\r\n    \"age\": 40,\r\n    \"active\": true\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"update"
+					]
+				},
+				"description": "Intento de actualización de datos del cliente \"client4\" con autorización (token) del cliente1"
+			},
+			"response": []
+		},
+		{
+			"name": "clientCancelation (with ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Client dado de baja\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/baja/cliente4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"baja",
+						"cliente4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteClient (with ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/client/8",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"client",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findEmployeeByUPosition (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/position/Administrativo",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"position",
+						"Administrativo"
+					]
+				},
+				"description": "Búsqueda de empleados por su posición. Debe devolver una lista de Employee."
+			},
+			"response": []
+		},
+		{
+			"name": "findEmployeeByUPosition (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/position/Administrativo",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"position",
+						"Administrativo"
+					]
+				},
+				"description": "StartFragment\n\nBúsqueda de empleados por su posición. Debe devolver una lista de Employee.\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllEmployee (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"all"
+					]
+				},
+				"description": "Búsqueda de todos los clientes. Debe devolver una lista de empleados"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllEmployee (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"all"
+					]
+				},
+				"description": "Búsqueda de todos los clientes. Debe devolver una lista de empleados"
+			},
+			"response": []
+		},
+		{
+			"name": "findEmployeeById (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"1"
+					]
+				},
+				"description": "Búsqueda de un empleado por su ID."
+			},
+			"response": []
+		},
+		{
+			"name": "findEmployeeById (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"1"
+					]
+				},
+				"description": "Búsqueda de un empleado por su ID con el ROL_MOD"
+			},
+			"response": []
+		},
+		{
+			"name": "inserEmployee (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Added a Empmloyee\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {        \r\n    \"username\": \"diana\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"diana@bookaro.com\",\r\n    \"dni\": \"43555666U\",\r\n    \"name\": \"Diana\",\r\n    \"surname\": \"Xamena\",\r\n    \"address\": \"dirección de prueba\",\r\n    \"age\": 30,\r\n    \"active\": true,\r\n    \"position\": \"Recepcionista\",\r\n    \"salary\": 1000.0   \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"insert"
+					]
+				},
+				"description": "Insercción de un empleado mediante el ROL_ADMIN."
+			},
+			"response": []
+		},
+		{
+			"name": "inserEmployee Fail (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {        \r\n    \"username\": \"sonia\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"sonia@bookaro.com\",\r\n    \"dni\": \"43555666T\",\r\n    \"name\": \"Sonia\",\r\n    \"surname\": \"Perez\",\r\n    \"address\": \"dirección de prueba\",\r\n    \"age\": 40,\r\n    \"active\": true,\r\n    \"position\": \"Contable\",\r\n    \"salary\": 1500.0   \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"insert"
+					]
+				},
+				"description": "Intento de Insercción de un empleado mediante el ROL_MOD. Un empleado no puede crear otro empleado por lo que debe devolver Forbbiden."
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployee (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Updated employee.\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " { \r\n    \"id\":\"9\",\r\n    \"username\": \"diana\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"dianaActualizado@bookaro.com\",\r\n    \"dni\": \"43555666U\",\r\n    \"name\": \"Diana\",\r\n    \"surname\": \"Xamena\",\r\n    \"address\": \"dirección de prueba\",\r\n    \"age\": 30,\r\n    \"active\": true,\r\n    \"position\": \"Recepcionista\",\r\n    \"salary\": 1500.0   \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/updateA",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"updateA"
+					]
+				},
+				"description": "Actualización de un empleado con ROL_ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployee (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Updated employee.\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaWFuYSIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkzNDcwfQ.84QGoizOxuCb0yMzBvF0xqTG5qSZv4r5qTjh6Fnom_AH8PVwbqgCiwIvun0iKGuja5uo93HgRrF-9-BnRfCrNQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " { \r\n    \"id\":\"9\",\r\n    \"username\": \"diana\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"diana@bookaro.com\",\r\n    \"dni\": \"43555666U\",\r\n    \"name\": \"Diana\",\r\n    \"surname\": \"Xamena\",\r\n    \"address\": \"dirección de prueba\",\r\n    \"age\": 30,\r\n    \"active\": true,\r\n    \"position\": \"Recepcionista\",\r\n    \"salary\": 1250.0   \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"update"
+					]
+				},
+				"description": "Actualización de un empleado con ROL_MOD"
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployee Fail (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " { \r\n    \"id\":\"9\",\r\n    \"username\": \"diana\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"dianaActualizar@bookaro.com\",\r\n    \"dni\": \"43555666U\",\r\n    \"name\": \"Diana\",\r\n    \"surname\": \"Xamena\",\r\n    \"address\": \"dirección de prueba\",\r\n    \"age\": 30,\r\n    \"active\": true,\r\n    \"position\": \"Recepcionista\",\r\n    \"salary\": 1250.0   \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"update"
+					]
+				},
+				"description": "Intento de actualización del empleado con username \"diana\" pero con el empleado con username \"pedro\". Debe devolver 403 Forbidden."
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEmployee (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Deleted the empmloyee.\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"9"
+					]
+				},
+				"description": "Borrado de un empleado con rol ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEmployee Fail (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/employee/9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"employee",
+						"9"
+					]
+				},
+				"description": "Intento de borrado de un empleado con ROL_MOD. Devuelve Forbidden"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBooks (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"all"
+					]
+				},
+				"description": "Obtención de todos los libros."
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBooks (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"all"
+					]
+				},
+				"description": "Obtención de todos los libros."
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBooks (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"all"
+					]
+				},
+				"description": "Obtención de todos los libros"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByAuthor (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/author",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"author"
+					]
+				},
+				"description": "Obtenemos una lista de libros por su autor"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByAuthor (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/author",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"author"
+					]
+				},
+				"description": "Obtenemos una lista de libros por su autor"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByAuthor (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/author",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"author"
+					]
+				},
+				"description": "Obtenemos una lista de libros por su autor"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByCategory (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/category/category1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"category",
+						"category1"
+					]
+				},
+				"description": "Obtenemos una lista de libros por su categoría"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByCategory (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/category/category1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"category",
+						"category1"
+					]
+				},
+				"description": "Obtenemos una lista de libros por su categoría"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByCategory (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/category/category1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"category",
+						"category1"
+					]
+				},
+				"description": "Obtenemos una lista de libros por su categoría"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByEditorial (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/editorial",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"editorial"
+					]
+				},
+				"description": "Busqueda de libros por su editorial"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByEditorial (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/editorial",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"editorial"
+					]
+				},
+				"description": "Obtenemos una lista de libros por su editorial"
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByEditorial (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/editorial",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"editorial"
+					]
+				},
+				"description": "Obtenemos una lista de libros por su editorial"
+			},
+			"response": []
+		},
+		{
+			"name": "findBookByName (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/name/libro1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"name",
+						"libro1"
+					]
+				},
+				"description": "StartFragment\n\nBúsqueda de un libro por su nombre.\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "findBookByName (MOD)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZWRybyIsInJvbGUiOlsiUk9MRV9NT0QiXSwiZXhwIjoxNjUzNTkwNzI3fQ.jfl_-l5EpwRLjx9nm5-TB2mN6qVLIE2Y3PnREM1MimhxGtEVBxc3SABpgzsPUyMT1PXb9csxsH0S_wjtCVi53Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/name/libro2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"name",
+						"libro2"
+					]
+				},
+				"description": "Búsqueda de un libro por su nombre."
+			},
+			"response": []
+		},
+		{
+			"name": "findBookByName (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/name/libro2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"name",
+						"libro2"
+					]
+				},
+				"description": "Búsqueda de un libro por su nombre."
+			},
+			"response": []
+		},
+		{
+			"name": "findBookById (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"1"
+					]
+				},
+				"description": "Búsqueda de un libro por su ID."
+			},
+			"response": []
+		},
+		{
+			"name": "findAllBooksWithPagination (ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/pagination/0/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"pagination",
+						"0",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertBook (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Added a book\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"libro3\",    \r\n    \"category\": \"category3\",    \r\n    \"synopsis\": \"synopsis3\",\r\n    \"isbn\": \"isbn3\",\r\n    \"active\":true,\r\n    \"author\": {\r\n        \"id\":1\r\n    },\r\n     \"editorial\": {\r\n        \"id\": 2        \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertBook Fail (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MDkxMn0.dyyP7iU-N1IgCGFgeqlxtt3_5BE_vuP7fHzCbDtx9rOYRcId7smGk6qKIB9hVeiDqalt64uwdASnmyo_xFqvjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"libro4\",    \r\n    \"category\": \"category4\",    \r\n    \"synopsis\": \"synopsis4\",\r\n    \"isbn\": \"isbn4\",\r\n    \"author\": {\r\n        \"id\":1\r\n    },\r\n    \"editorial\": {\r\n        \"id\":1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"insert"
+					]
+				},
+				"description": "Intentamos introducir un libro sin pasarle el objeto en el body. "
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Updated book.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"libro1Actualizado\",    \r\n    \"category\": \"category1\",    \r\n    \"synopsis\": \"synopsis1\",\r\n    \"isbn\": \"isbn1\",\r\n    \"active\":true,\r\n    \"author\": {\r\n        \"id\":2\r\n    },\r\n    \"editorial\": {\r\n        \"id\":1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"update"
+					]
+				},
+				"description": "Actualizamos el primer libro introducido con ROL_ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook Fail (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Error actualizando\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"libro1Actualizado\",    \r\n    \"category\": \"category1\",    \r\n    \"synopsis\": \"synopsis1\",\r\n    \"isbn\": \"isbn1\",\r\n    \"editorial\": {\r\n        \"id\":1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"update"
+					]
+				},
+				"description": "Intentamos actualizar un libro con un ISB de otro. Tiene que devolver \"Error actualizando\""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Deleted the book.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"3"
+					]
+				},
+				"description": "Eliminación de un libro"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook Fail (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"The id is invalid for the book.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/0",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"0"
+					]
+				},
+				"description": "Intento de borrado de un libro con un ID = 0"
+			},
+			"response": []
+		},
+		{
+			"name": "insertImage(ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe json\", function() {\r",
+							"    var jsonData = pm.response.json();    \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1OTE4OTZ9.AV8zP0CURFpHnvojq9WQ1i905bYwZcQtoX3AWIqjgLFFcd0cbZWXDNL9EEcxpBi5VtqzcQn0HgskI7wutoKsaw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "create.png"
+						},
+						{
+							"key": "book_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/upload/image",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"upload",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findImageBName (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/get/image/captura.png",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"get",
+						"image",
+						"captura.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateImage (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1OTE4OTZ9.AV8zP0CURFpHnvojq9WQ1i905bYwZcQtoX3AWIqjgLFFcd0cbZWXDNL9EEcxpBi5VtqzcQn0HgskI7wutoKsaw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "alta.png"
+						},
+						{
+							"key": "book_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/update/image/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"update",
+						"image",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImageAll (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/get/image/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"get",
+						"image",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImageDetails(ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1OTE4OTZ9.AV8zP0CURFpHnvojq9WQ1i905bYwZcQtoX3AWIqjgLFFcd0cbZWXDNL9EEcxpBi5VtqzcQn0HgskI7wutoKsaw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/get/image/info/create.png",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"get",
+						"image",
+						"info",
+						"create.png"
+					]
+				},
+				"description": "Obtenemos una imagen por su nombre completo (con extensión)"
+			},
+			"response": []
+		},
+		{
+			"name": "findImageById (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Obtener json\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/get/image/id/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"get",
+						"image",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteImage (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Pedro/Downloads/postman.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/delete/image/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"delete",
+						"image",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllOrderByClient (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMiIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MTA2OX0.Nb4T9kwAD8Ly7-CHxL0Fw6ZhTSUcFDyhb5cgSFtjvJw7sAUDjAEWOd6eDeL4lM1qFHmb1IiSEL1-vB0QmOO1uQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":5,\r\n    \"username\":\"cliente2\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/client",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"client"
+					]
+				},
+				"description": "Devuelve una lista de orders filtrando por un cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "findAllOrderByActive (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":4,\r\n    \"username\":\"cliente1\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/active/false",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"active",
+						"false"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllOrderById (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMiIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MTA2OX0.Nb4T9kwAD8Ly7-CHxL0Fw6ZhTSUcFDyhb5cgSFtjvJw7sAUDjAEWOd6eDeL4lM1qFHmb1IiSEL1-vB0QmOO1uQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":4,\r\n    \"username\":\"cliente1\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"2"
+					]
+				},
+				"description": "Búsqueda de una order por su ID. Pueden acceder ADMIN, MOD y el propio usuario que generó la order."
+			},
+			"response": []
+		},
+		{
+			"name": "findAllOrder (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":4,\r\n    \"username\":\"cliente1\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"all"
+					]
+				},
+				"description": "Búsqueda de todas las Order."
+			},
+			"response": []
+		},
+		{
+			"name": "addOrder (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMiIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MTA2OX0.Nb4T9kwAD8Ly7-CHxL0Fw6ZhTSUcFDyhb5cgSFtjvJw7sAUDjAEWOd6eDeL4lM1qFHmb1IiSEL1-vB0QmOO1uQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"startDate\": \"2022-05-13T09:14:06.122+00:00\",\r\n    \"active\": true,\r\n    \"book\": {\r\n        \"id\":2\r\n    },\r\n    \"client\": {\r\n        \"id\":5,\r\n        \"subscription\": {\r\n            \"id_sub\": 2,\r\n            \"type\": \"Básica\",\r\n            \"price\": 20.0\r\n        },\r\n        \"orders\": [\r\n            {\r\n                \"id\":2,\r\n                \"active\":true\r\n            }\r\n            \r\n        ]\r\n    }     \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"insert"
+					]
+				},
+				"description": "Insercción de una order por un cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "addOrderFail1 (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Tiene demasiadas ordenes\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMiIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MTA2OX0.Nb4T9kwAD8Ly7-CHxL0Fw6ZhTSUcFDyhb5cgSFtjvJw7sAUDjAEWOd6eDeL4lM1qFHmb1IiSEL1-vB0QmOO1uQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"startDate\": \"2022-05-13T09:14:06.122+00:00\",\r\n    \"active\": true,\r\n    \"book\": {\r\n        \"id\":2\r\n    },\r\n    \"client\": {\r\n        \"id\":5,\r\n        \"subscription\": {\r\n            \"id_sub\": 2,\r\n            \"type\": \"Básica\",\r\n            \"price\": 20.0\r\n        },\r\n        \"orders\": [\r\n            {\r\n                \"id\":2,\r\n                \"active\":true\r\n            },\r\n            {\r\n                \"id\":4,\r\n                \"active\":true\r\n            }\r\n            \r\n        ]\r\n    }     \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"insert"
+					]
+				},
+				"description": "Límite subscripciones activas alcanzado."
+			},
+			"response": []
+		},
+		{
+			"name": "addOrderFail2 (USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Tiene demasiadas ordenes\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjbGllbnRlMiIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1MzU5MTA2OX0.Nb4T9kwAD8Ly7-CHxL0Fw6ZhTSUcFDyhb5cgSFtjvJw7sAUDjAEWOd6eDeL4lM1qFHmb1IiSEL1-vB0QmOO1uQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"startDate\": \"2022-05-13T09:14:06.122+00:00\",\r\n    \"active\": true,\r\n    \"book\": {\r\n        \"id\":2\r\n    },\r\n    \"client\": {\r\n        \"id\":5,\r\n        \"subscription\": {\r\n            \"id_sub\": 3,\r\n            \"type\": \"Sin Subscripción\",\r\n            \"price\": 0\r\n        }\r\n    }     \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"insert"
+					]
+				},
+				"description": "No tiene subscripción activa"
+			},
+			"response": []
+		},
+		{
+			"name": "updateOrder (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"startDate\": \"2022-05-13T09:14:06.122+00:00\",\r\n    \"active\": true,\r\n    \"book\": {\r\n        \"id\":2\r\n    },\r\n    \"client\": {\r\n        \"id\":5,\r\n        \"subscription\": {\r\n            \"id_sub\": 2,\r\n            \"type\": \"Básica\",\r\n            \"price\": 20.0\r\n        }\r\n    } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"update"
+					]
+				},
+				"description": "Actualización de la order. Cambiamos el libro."
+			},
+			"response": []
+		},
+		{
+			"name": "deleteOrder (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Deleted the order.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"startDate\": \"2022-05-13T09:14:06.122+00:00\",\r\n    \"active\": true,\r\n    \"book\": {\r\n        \"id\":2\r\n    },\r\n    \"client\": {\r\n        \"id\":5,\r\n        \"subscription\": {\r\n            \"id_sub\": 2,\r\n            \"type\": \"Básica\",\r\n            \"price\": 20.0\r\n        }\r\n    } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/order/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"order",
+						"4"
+					]
+				},
+				"description": "Borrado de una order"
+			},
+			"response": []
+		},
+		{
+			"name": "getSubscriptionAll (Sin autorizacion)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMzNDU0MzN9.bM0POUnbA6ElPbASwN2aZN5qQMgiSvU7oGt2cym5z4pWTcRBGB6aLoNKK3QnWpVRjkshgPUUIaK6SdVksTT8yg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/subscription/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"subscription",
+						"all"
+					]
+				},
+				"description": "Obtenermos todas las subscripciones"
+			},
+			"response": []
+		},
+		{
+			"name": "getSubscriptionId (Sin autorizacion)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/subscription/id/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"subscription",
+						"id",
+						"1"
+					]
+				},
+				"description": "Obtener una subscripcion por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "updateSubscription (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Updated subscription.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_sub\": 1,\r\n    \"type\": \"Familiar\",\r\n    \"price\": 40.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/subscription/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"subscription",
+						"update"
+					]
+				},
+				"description": "Actualizamos el precio de una subscripción."
+			},
+			"response": []
+		},
+		{
+			"name": "insertSubscription (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Added a subscription\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"type\": \"Pruebas\",\r\n    \"price\": 400.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/subscription/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"subscription",
+						"insert"
+					]
+				},
+				"description": "Añadimos una subscripción de prueba"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteSubscription (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibe msg\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Deleted the subscription.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_sub\": 1,\r\n    \"type\": \"Familiar\",\r\n    \"price\": 40.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/subscription/delete/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"subscription",
+						"delete",
+						"4"
+					]
+				},
+				"description": "Borrado de una subscripcion"
+			},
+			"response": []
+		},
+		{
+			"name": "insertAuthor (ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"author5\",\r\n    \"nacionality\": \"MOROCO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/author/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"author",
+						"insert"
+					]
+				},
+				"description": "Insertamos un author."
+			},
+			"response": []
+		},
+		{
+			"name": "updateAuthor(ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":6,\r\n    \"name\":\"Author3\",\r\n    \"nacionality\":\"SPAIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/author/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"author",
+						"update"
+					]
+				},
+				"description": "Actualizacion de un author."
+			},
+			"response": []
+		},
+		{
+			"name": "findAuthorById(ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Author3\",\r\n    \"nacionality\":\"MOROCO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/author/id/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"author",
+						"id",
+						"1"
+					]
+				},
+				"description": "Buscar Author por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "findAllAuthor(ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Author3\",\r\n    \"nacionality\":\"MOROCO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/author/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"author",
+						"all"
+					]
+				},
+				"description": "Búsqueda de todos los autores"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAuthor(ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Author3\",\r\n    \"nacionality\":\"MOROCO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/author/delete/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"author",
+						"delete",
+						"2"
+					]
+				},
+				"description": "Borrado de un Author."
+			},
+			"response": []
+		},
+		{
+			"name": "findAllEditorial (ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Author3\",\r\n    \"nacionality\":\"MOROCO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/editorial/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"editorial",
+						"all"
+					]
+				},
+				"description": "Búsqueda de todas las editoriales en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "findEditorialById(ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Author3\",\r\n    \"nacionality\":\"MOROCO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/editorial/id/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"editorial",
+						"id",
+						"1"
+					]
+				},
+				"description": "Búsqueda de una Editorial por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "insertEditorial (ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"editorial3\"        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/editorial/insert",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"editorial",
+						"insert"
+					]
+				},
+				"description": "Insercción de una editorial"
+			},
+			"response": []
+		},
+		{
+			"name": "updateEditorial (ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":3,    \r\n    \"name\": \"editorial3Actualizada\"        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/editorial/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"editorial",
+						"update"
+					]
+				},
+				"description": "Actualización de una editorial"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEditorial (ADMIN) ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTMwODc0NTF9.sztLd5wy-6pxHErEUUB1BcOpIM21QBXIXbTNm1RX1t2hELAbnz9OLTVI7kQ5lp7ZbnFWxRvHcDG5PfBXt6_b2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Author3\",\r\n    \"nacionality\":\"MOROCO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/editorial/delete/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"editorial",
+						"delete",
+						"3"
+					]
+				},
+				"description": "Eliminación de una editorial por su id"
+			},
+			"response": []
+		},
+		{
+			"name": "logout (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibe msg despedida\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Hasta la próxima\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/user/logout",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImageAll Fail (ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2NTM1ODc5MzB9.Zt5oLKkrkZzAb6vSYtGoQvQwstZ9FAyw_khSDnVPpOKVacOGnzwa1FDkZddUR660tyWHgeZP54UPw_JRPs3gOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/book/get/image/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"book",
+						"get",
+						"image",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
